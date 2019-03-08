@@ -15,3 +15,8 @@ class BitcoindNode(object):
         self.rpc = Proxy(
             btc_conf_file=app.config['BITCOIND_CONF_FILE_PATH']
         )
+
+    def estimate_smart_fee(self, conf_target, mode):
+        # noinspection PyProtectedMember
+        r = self.rpc._call('estimatesmartfee', conf_target, mode)
+        return r
