@@ -1,5 +1,4 @@
-from flask import current_app
-
+# noinspection PyPackageRequirements
 from bitcoin.rpc import Proxy
 
 
